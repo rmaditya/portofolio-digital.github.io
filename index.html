@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Digital - Profile Style</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+
+        /* Header Profile */
+        .profile-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 10px;
+            background-color: #dee4ea;
+            border-bottom: 2px solid #fffefe;
+            animation: slideDown 2s ease-in-out;
+        }
+
+        .profile-picture {
+            width: 160px;
+            height: 160px;
+            border-radius: 100%;
+            overflow: hidden;
+            border: 3px solid #cfcbc8;
+            animation: bounce 3s infinite;
+        }
+
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .bio {
+            margin-left: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .bio h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2a2828;
+        }
+
+        .bio p {
+            font-size: 1rem;
+            color: #666;
+            margin: 10px 0;
+        }
+
+        .follower-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .follower-info div {
+            text-align: center;
+            margin-right: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .follower-info div:hover {
+            transform: scale(1.1);
+        }
+
+        .follower-info strong {
+            display: block;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .follower-info p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Portfolio Section */
+        .portfolio-section {
+            padding: 50px;
+        }
+
+        .portfolio-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: #333;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .grid-item {
+            overflow: hidden;
+            border-radius: 10px;
+            position: relative;
+            animation: slideUp 1s ease-in-out;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .grid-item:hover img {
+            transform: scale(1.1);
+            filter: brightness(80%);
+        }
+
+        .grid-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .grid-item:hover::before {
+            opacity: 2;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px 0;
+            background-color: #f77737;
+            color: #fff;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        footer p {
+            font-size: 2rem;
+        }
+
+        /* Animations */
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Profile -->
+    <header class="profile-header">
+        <div class="profile-picture">
+            <img src="rm2.jpg.jpeg" alt="Foto Profil">
+        </div>
+        <div class="bio">
+            <h1>Ramaditya Syaqib Ahmad</h1>
+            <p>Jangan lupa terhadap ilmu yang sudah dipelajari</p>
+            <div class="follower-info">
+                <div>
+                    <strong>4</strong>
+                    <p>postingan</p>
+                </div>
+                <div>
+                    <strong>3.5K</strong>
+                    <p>pengikut</p>
+                </div>
+                <div>
+                    <strong>10</strong>
+                    <p>mengikuti</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section">
+        <h2>Pengalaman Saya</h2>
+        <div class="grid">
+            <div class="grid-item"><img src="kg5.jpg.jpeg" alt="Project 1"></div>
+            <div class="grid-item"><img src="kg10.jpg.jpeg" alt="Project 2"></div>
+            <div class="grid-item"><img src="kg9.jpg.jpeg" alt="Project 3"></div>
+            <div class="grid-item"><img src="kg 3.jpg.jpeg" alt="Project 3"></div>
+
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p> PORTOFOLIO SAYA</p>
+    </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramaditya S.A</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <h1 class="logo">ラマディティヤ・シャキブ・ア-マド</h1>
+        <ul class="nav-links">
+            <li><a href="#about">Tentang Saya</a></li>
+            <li><a href="#projects">Beberapa Pengalaman</a></li>
+            <li><a href="#contact">WhatsApp</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="hero">
+    <h2>SELAMAT DATANG DIPORTOFOLIO SAYA</h2>
+    <p>mencari uang itu susah, yang tidak susah itu menghabiskan uang</p>
+    
+</section>
+
+<section id="about">
+    <h2>Tentang Saya</h2>
+    <p>Nama saya adalah Ramaditya Syaqib Ahmad, saya biasa dipanggil dengan nama rama. Lahir di Kudus tepatnya didesa Kesambi pada tanggal 16 Mei 2007.<br> Saya merupakan anak kedua dari dua bersaudara. Saat ini saya merupakan siswa kelas 12 di SMKN 2 KUDUS dengan program keahlian Teknik Jaringan Komputer.<br>
+    Selama disekolah saya mengikuti banyak sekali Kegiatan berorganisasi. Salah satu contohnya yaitu Pramuka. Saya merupakan anggota dewan masa bakti 2023-2024.
+Selain itu saya juga pernah mengikuti program Telkom Digiup yang diadakan oleh Telkom. Saya mendapatkan banyak sekali ilmu dan wawasan mengenai desain grafis.<br>
+Saya merupakan seseorang yang selalu ingin belajar mengenai hal baru, Selalu bekerja keras untuk memecahkan suatu masalah, rajin, disiplin, bertanggung jawab, kreatif, dan mudah akrab  dengan orang lain.<br>
+Selain itu saya juga  pernah mengikuti lomba desain grafis yang diadakan oleh IAIN. Dan saya mendapatkan juara 2 dan mendapatkan sertifikat BNSP dari telkom.
+<br>Lalu saya juga mempunyai pengalaman PKL di pabrik fiber optik atau lebih tepatnya di PT. CATU BUANA PRIMA. Disini saya mendapatkan banyak sekali ilmu.
+<br> Seperti cara spliser, cara nanam tiang, urutan kabel fo, dan lainnya.<br> Lalu saya juga mengikuti program LPK di Hamaren tepatnya berada di wisudha karya kudus selama 4 bulan. Saat di LPK saya diajari mengenai cara menulis,<br> membaca, berbicara, serta budaya jepang. 
+Alasan saya mengikuti kegiatan LPK ini yaitu karena saya ingin pergi kejepang dan mencari uang disana. Selain itu <br> saya juga mencari universitas untuk kuliah. Karena harapan saya saat sudah pulang ke Indonesia adalah selain pulang membawa uang juga membawa<br> gelar sarjana dari kuliah di jepang. </p>
+</section>
+
+<section id="projects">
+    <h2>Beberapa Pengalaman Saya</h2>
+    <div class="project-container">
+        <div class="project-card">
+            <h3>Test JLCT N5.</h3>
+            <p>JLCT N5 test yang dilaksanakan di Semarang , tujuan dari tes ini yaitu untuk mengukur skil saya dalam berbicara, menulis, dan membaca tingkat N5 dalam Jepang.</p>
+        </div>
+        <div class="project-card">
+            <h3>Program Telkom Digiup.</h3>
+            <p>Program ini saya ikuti waktu mau naik kelas 11 dan di sini saya mendapatkan banyak ilmu tentang desain grafis selain itu saya juga mendapatkansertifikat BNSP. </p>
+        </div>
+        <div class="project-card">
+            <h3>Lomba Lintas Alam.</h3>
+            <p>Disini menguji kedisiplinan, tanggung jawab,kepintaran, serta bagaimana cara kerja tim yang baik dan benar untuk mendapatkan juara, Dan pada saat itu kelompok saya mendapatkan juara 1. </p>
+        </div>
+    </div>
+</section>
+</section>
+<section id="contact" class="section">
+    <h2 class="section-title">Kontak</h2>
+<div class="section">
+    <div class="section-description">
+
+        <a href="mailto: rma8060@gmail.com">
+        <button class="contact-btn">Email</button>
+        </a>
+
+        <a onclick="window.open('https://wa.me/6285865538680');">
+        <button class="contact-btn">WhatsApp</button>   
+        </a>
+    </div>
+</div>
+</section>
+
+
+       
+    </form>
+</section>
+
+<footer>
+    <p> はい、終わりました。</p>
+</footer>
+
